@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nba-shot-auditor"
+version = "0.1.0"
+description = "Detect labeling errors in NBA shot data — shot clock, game clock, and point value validation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.0",
+    "nba_api>=1.4",
+    "streamlit>=1.35",
+    "pandas>=2.0",
+    "altair>=5.0",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-mock>=3.12",
+]
+
+[project.scripts]
+shot-auditor = "shot_auditor.app.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shot_auditor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=shot_auditor --cov-report=term-missing -q"
+
+[tool.coverage.run]
+source = ["src"]
