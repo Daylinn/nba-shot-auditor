@@ -1,6 +1,6 @@
 # NBA Shot Auditor
 
-[![CI](https://github.com/YOUR_USERNAME/nba-shot-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/nba-shot-auditor/actions)
+[![CI](https://github.com/Daylinn/nba-shot-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/Daylinn/nba-shot-auditor/actions)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
 Detect labeling errors in NBA shot records. Validates **shot clock**, **game clock**, and **point values** against official NBA rules, and returns faulty shot IDs ordered from most recent to oldest.
